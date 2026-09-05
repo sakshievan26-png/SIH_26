@@ -2,11 +2,10 @@
 // Owner: Member 2 (OCR/Document AI)
 // Objective: automatically extract all relevant fields from an identity/travel document.
 
-import { ImageInput, DocumentType } from "./common";
+import type { ImageInput, DocumentType } from "./common";
 
 // INPUT — what the OCR module receives
 export interface OcrInput extends ImageInput {}
-// (documentType tells the module which field set to expect/extract)
 
 // OUTPUT — passport-type documents
 export interface PassportFields {
@@ -16,6 +15,7 @@ export interface PassportFields {
   dateOfBirth: string;   // ISO format "YYYY-MM-DD"
   dateOfExpiry: string;  // ISO format "YYYY-MM-DD"
   gender: string;
+  mrz?: string;          // Machine-Readable Zone raw string (two lines)
 }
 
 // OUTPUT — visa-type documents
@@ -28,9 +28,8 @@ export interface VisaFields {
 
 export interface OcrOutput {
   documentType: DocumentType;
-  confidence: number;        // 0-1, overall OCR confidence
   fields: PassportFields | VisaFields;
-  rawText?: string;          // optional: full raw OCR text dump, useful for debugging
+  confidence: number;   // 0.0 – 1.0
 }
 
 /*
@@ -44,7 +43,8 @@ Example (passport):
     "nationality": "INDIAN",
     "dateOfBirth": "1998-03-14",
     "dateOfExpiry": "2030-03-13",
-    "gender": "M"
+    "gender": "M",
+    "mrz": "P<INDDOE<<JOHN<<<<<<<<<<<<<<<<<<<<<<<<<<<<\nP1234567IND9803141M3003137<<<<<<<<<<<<<<02"
   }
 }
 */

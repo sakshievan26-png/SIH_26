@@ -3,7 +3,7 @@
 // Objective: verify whether extracted OCR information follows official document
 // standards / passes rule and database checks (format, expiry, blacklist, etc.)
 
-import { OcrOutput } from "./ocr";
+import type { OcrOutput } from "./ocr";
 
 // INPUT — takes the OCR module's output directly
 export interface DocumentValidationInput {
@@ -11,20 +11,20 @@ export interface DocumentValidationInput {
 }
 
 export interface ValidationCheck {
-  rule: string;        // e.g. "expiry_date_valid", "passport_number_format", "blacklist_check"
+  rule: string;     // e.g. "expiry_date_valid", "passport_number_format"
   passed: boolean;
-  detail?: string;      // short explanation if failed
+  detail?: string;  // human-readable explanation, especially when failed
 }
 
 export interface DocumentValidationOutput {
-  isValid: boolean;
   checks: ValidationCheck[];
+  overallPassed: boolean;
 }
 
 /*
 Example:
 {
-  "isValid": false,
+  "overallPassed": false,
   "checks": [
     { "rule": "passport_number_format", "passed": true },
     { "rule": "expiry_date_valid", "passed": true },

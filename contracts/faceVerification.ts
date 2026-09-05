@@ -10,16 +10,18 @@ export interface FaceVerificationInput {
 
 // OUTPUT
 export interface FaceVerificationOutput {
-  matchScore: number;    // 0-1, similarity score
-  isMatch: boolean;       // matchScore above the module's own threshold
-  model: string;          // e.g. "arcface", "facenet"
+  matched: boolean;
+  similarityScore: number;   // 0.0 – 1.0
+  liveness: boolean;         // true if live photo passed liveness check
+  detail: string;            // human-readable summary
 }
 
 /*
 Example:
 {
-  "matchScore": 0.91,
-  "isMatch": true,
-  "model": "arcface"
+  "matched": true,
+  "similarityScore": 0.91,
+  "liveness": true,
+  "detail": "Face match confirmed with high confidence; liveness check passed."
 }
 */
