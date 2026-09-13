@@ -1,0 +1,17 @@
+{
+  "tamperingScore": 0.026231653690338086,
+  "isTampered": true,
+  "method": "error_level_analysis",
+  "flaggedRegions": [
+    {
+      "label": "suspicious_region",
+      "boundingBox": {
+        "x": 0.3,
+        "y": 0.3,
+        "w": 0.4,
+        "h": 0.4
+      },
+      "confidence": 0.026231653690338086
+    }
+  ]
+}
