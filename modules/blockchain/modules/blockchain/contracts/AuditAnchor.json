@@ -1,0 +1,174 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "sequence",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "digest",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "writer",
+          "type": "address"
+        }
+      ],
+      "name": "Anchored",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "writer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "allowed",
+          "type": "bool"
+        }
+      ],
+      "name": "WriterChanged",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "sequence",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "previous",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "digest",
+          "type": "bytes32"
+        }
+      ],
+      "name": "anchor",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "count",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "hashes",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "head",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "writer",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "allowed",
+          "type": "bool"
+        }
+      ],
+      "name": "setWriter",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "writers",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bin": "60a060405234801561000f575f80fd5b503360808190525f908152602081905260409020805460ff1916600117905560805161051b61004c5f395f818160e60152610312015261051b5ff3fe608060405234801561000f575f80fd5b506004361061007a575f3560e01c8063501895ae11610058578063501895ae146100c25780638da5cb5b146100e15780638e7e80a2146101205780638f7dcfa314610152575f80fd5b8063065dfced1461007e57806306661abd146100935780631f91b39f146100af575b5f80fd5b61009161008c36600461040c565b61015b565b005b61009c60025481565b6040519081526020015b60405180910390f35b6100916100bd366004610450565b610307565b61009c6100d0366004610489565b60016020525f908152604090205481565b6101087f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b0390911681526020016100a6565b61014261012e3660046104a0565b5f6020819052908152604090205460ff1681565b60405190151581526020016100a6565b61009c60035481565b335f9081526020819052604090205460ff166101ac5760405162461bcd60e51b815260206004820152600b60248201526a777269746572206f6e6c7960a81b60448201526064015b60405180910390fd5b806101e75760405162461bcd60e51b815260206004820152600b60248201526a1e995c9bc8191a59d95cdd60aa1b60448201526064016101a3565b5f831180156101f857506002548311155b15610252575f83815260016020526040902054811461024d5760405162461bcd60e51b8152602060048201526011602482015270636f6e666c696374696e6720726574727960781b60448201526064016101a3565b505050565b6002546102609060016104c0565b8314801561026f575060035482145b6102aa5760405162461bcd60e51b815260206004820152600c60248201526b37baba1037b31037b93232b960a11b60448201526064016101a3565b5f83815260016020526040908190208290556003829055600284905551339084907f9f06cd45b64d81fe5ae9ae2005fe2df791dadadd915cd2e4f1c5b60525fd4234906102fa9085815260200190565b60405180910390a3505050565b336001600160a01b037f0000000000000000000000000000000000000000000000000000000000000000161461036c5760405162461bcd60e51b815260206004820152600a6024820152696f776e6572206f6e6c7960b01b60448201526064016101a3565b6001600160a01b0382166103b05760405162461bcd60e51b815260206004820152600b60248201526a3d32b937903bb934ba32b960a91b60448201526064016101a3565b6001600160a01b0382165f8181526020818152604091829020805460ff191685151590811790915591519182527f4759a00269085626e6e1450d837be4ca396feb3a3bd6ecdd95089b76c2acddc1910160405180910390a25050565b5f805f6060848603121561041e575f80fd5b505081359360208301359350604090920135919050565b80356001600160a01b038116811461044b575f80fd5b919050565b5f8060408385031215610461575f80fd5b61046a83610435565b91506020830135801515811461047e575f80fd5b809150509250929050565b5f60208284031215610499575f80fd5b5035919050565b5f602082840312156104b0575f80fd5b6104b982610435565b9392505050565b808201808211156104df57634e487b7160e01b5f52601160045260245ffd5b9291505056fea26469706673582212201fb2a47450223cc19f3e745cb5334afc6f046367f810d13eed5e3eec057bc18a64736f6c63430008180033",
+  "source_sha256": "678401c562ba9ba4458d1401943b10e6fa6a7f178d96735e126a4fd9cad90d50",
+  "compiler": "0.8.24"
+}

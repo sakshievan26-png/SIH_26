@@ -1,0 +1,16 @@
+{
+  "module_version": "0.2.0",
+  "source": "User-uploaded SIH_26-main.zip; not a live GitHub checkout",
+  "files": {
+    "barcodeScan.ts": "28f61e03631fae8636cea25188b50fc3984c1be74a88086894fef435c24ca725",
+    "blockchainAudit.ts": "c62fa3e366f658bb9c38fc065d361cff99918dfaa741e7adc0e05d78d17e193a",
+    "common.ts": "c73bdcc78e804e06abf3d7972d09f45cb9bd2508cb8057c3222f702110cb4eb9",
+    "documentValidation.ts": "e846108590dd6735f3f639871da6407d10d8a38ee54e1abe8410c68404d33e53",
+    "faceVerification.ts": "c9cfed1a46ec1af69e882b196f9c47a7dd0a6822d370d3bb8100f0bdd5da8d6f",
+    "index.ts": "88553293d144dc5fb089522b662d06ffd35d50fd2a2199a2f2960b7c870921a4",
+    "ocr.ts": "7f5cc86a4cbbcd1c15f0fd8d6c6ebac92aabeb7745bb9b6ae39b2f737325908e",
+    "riskScore.ts": "c9848341de46f6ae210518da19f4c815588104a23f32c404363da31eccc93176",
+    "tamperingDetection.ts": "01a57a4d03bfd79570e69b91a57dfb3377746b7c9346341fa793bf4a5a0fcafa",
+    "watermarkVerification.ts": "c68e6e49488ac0a0a3ab019842555105fdabbd8f14b4dc5301086443265a7467"
+  }
+}

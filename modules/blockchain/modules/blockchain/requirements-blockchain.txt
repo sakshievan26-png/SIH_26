@@ -1,0 +1,2 @@
+# Optional EVM connector; audit module itself uses Python standard library only.
+web3==7.16.0
